@@ -2,29 +2,38 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * @property int $id
+ * @property int $id_level
+ * @property string $name
+ * @property string $address
+ * @property string $phone
+ * @property string $email
+ * @property string $email_verified_at
+ * @property string $password
+ * @property string $remember_token
+ * @property string $created_at
+ * @property string $updated_at
+ * @property Level $level
+ * @property ChatterDiscussion[] $chatterDiscussions
+ * @property ChatterPost[] $chatterPosts
+ * @property ChatterDiscussion[] $chatterDiscussions
+ */
 class User extends Authenticatable
 {
-    use Notifiable;
-
     /**
-     * The attributes that are mass assignable.
-     *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $fillable = ['id_level', 'name', 'address', 'phone', 'email', 'email_verified_at', 'password', 'remember_token', 'created_at', 'updated_at'];
 
     /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    public function level()
+    {
+        return $this->belongsTo('App\Level', 'id_level', 'id_level');
+    }
 }
