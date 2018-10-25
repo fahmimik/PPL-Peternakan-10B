@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2018 at 05:54 PM
+-- Generation Time: Oct 25, 2018 at 06:02 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.1.21
 
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `ssebs`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bobot_sapi`
+--
+
+CREATE TABLE `bobot_sapi` (
+  `id_bobot` int(11) NOT NULL,
+  `bobot` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bobot_sapi`
+--
+
+INSERT INTO `bobot_sapi` (`id_bobot`, `bobot`) VALUES
+(1, '180 kg - 200 kg'),
+(2, '200 kg - 250 kg'),
+(3, '250 kg - 300 kg'),
+(4, '300 kg - 350 kg');
 
 -- --------------------------------------------------------
 
@@ -80,12 +101,9 @@ CREATE TABLE `chatter_discussion` (
 --
 
 INSERT INTO `chatter_discussion` (`id`, `chatter_category_id`, `title`, `user_id`, `sticky`, `views`, `answered`, `created_at`, `updated_at`, `slug`, `color`, `deleted_at`, `last_reply_at`) VALUES
-(3, 1, 'Hello Everyone, This is my Introduction', 1, 0, 0, 0, '2016-08-18 07:27:56', '2016-08-18 07:27:56', 'hello-everyone-this-is-my-introduction', '#239900', NULL, '2018-10-11 15:50:37'),
-(6, 2, 'Login Information for Chatter', 1, 0, 0, 0, '2016-08-18 07:39:36', '2016-08-18 07:39:36', 'login-information-for-chatter', '#1a1067', NULL, '2018-10-11 15:50:37'),
-(7, 3, 'Leaving Feedback', 1, 0, 0, 0, '2016-08-18 07:42:29', '2016-08-18 07:42:29', 'leaving-feedback', '#8e1869', NULL, '2018-10-11 15:50:37'),
-(8, 4, 'Just a random post', 1, 0, 0, 0, '2016-08-18 07:46:38', '2016-08-18 07:46:38', 'just-a-random-post', '', NULL, '2018-10-11 15:50:37'),
-(9, 2, 'Welcome to the Chatter Laravel Forum Package', 1, 0, 0, 0, '2016-08-18 07:59:37', '2016-08-18 07:59:37', 'welcome-to-the-chatter-laravel-forum-package', '', NULL, '2018-10-11 15:50:37'),
-(10, 5, 'Saya Sange', 2, 0, 1, 0, '2018-10-11 08:53:44', '2018-10-11 08:53:44', 'saya-sange', '', NULL, '2018-10-11 15:53:44');
+(10, 1, 'itak anak haram', 3, 0, 12, 0, '2018-10-11 18:38:29', '2018-10-22 19:24:53', 'itak-anak-haram', '', NULL, '2018-10-11 18:39:40'),
+(11, 1, 'asdasdasd', 1, 0, 2, 0, '2018-10-22 19:16:35', '2018-10-22 19:16:47', 'asdasdasd', '', NULL, '2018-10-23 02:16:35'),
+(13, 1, 'pengalaman kawin', 2, 0, 3, 0, '2018-10-22 19:38:01', '2018-10-25 08:48:28', 'pengalaman-kawin', '', NULL, '2018-10-23 02:38:01');
 
 -- --------------------------------------------------------
 
@@ -110,14 +128,10 @@ CREATE TABLE `chatter_post` (
 --
 
 INSERT INTO `chatter_post` (`id`, `chatter_discussion_id`, `user_id`, `body`, `created_at`, `updated_at`, `markdown`, `locked`, `deleted_at`) VALUES
-(1, 3, 1, '<p>My name is Tony and I\'m a developer at <a href=\"https://devdojo.com\" target=\"_blank\">https://devdojo.com</a> and I also work with an awesome company in PB called The Control Group: <a href=\"http://www.thecontrolgroup.com\" target=\"_blank\">http://www.thecontrolgroup.com</a></p>\n        <p>You can check me out on twitter at <a href=\"http://www.twitter.com/tnylea\" target=\"_blank\">http://www.twitter.com/tnylea</a></p>\n        <p>or you can subscribe to me on YouTube at <a href=\"http://www.youtube.com/devdojo\" target=\"_blank\">http://www.youtube.com/devdojo</a></p>', '2016-08-18 07:27:56', '2016-08-18 07:27:56', 0, 0, NULL),
-(5, 6, 1, '<p>Hey!</p>\n        <p>Thanks again for checking out chatter. If you want to login with the default user you can login with the following credentials:</p>\n        <p><strong>email address</strong>: tony@hello.com</p>\n        <p><strong>password</strong>: password</p>\n        <p>You\'ll probably want to delete this user, but if for some reason you want to keep it... Go ahead :)</p>', '2016-08-18 07:39:36', '2016-08-18 07:39:36', 0, 0, NULL),
-(6, 7, 1, '<p>If you would like to leave some feedback or have any issues be sure to visit the github page here: <a href=\"https://github.com/thedevdojo/chatter\" target=\"_blank\">https://github.com/thedevdojo/chatter</a>&nbsp;and I\'m sure I can help out.</p>\n        <p>Let\'s make this package the go to Laravel Forum package. Feel free to contribute and share your ideas :)</p>', '2016-08-18 07:42:29', '2016-08-18 07:42:29', 0, 0, NULL),
-(7, 8, 1, '<p>This is just a random post to show you some of the formatting that you can do in the WYSIWYG editor. You can make your text <strong>bold</strong>, <em>italic</em>, or <span style=\"text-decoration: underline;\">underlined</span>.</p>\n        <p style=\"text-align: center;\">Additionally, you can center align text.</p>\n        <p style=\"text-align: right;\">You can align the text to the right!</p>\n        <p>Or by default it will be aligned to the left.</p>\n        <ul>\n        <li>We can also</li>\n        <li>add a bulleted</li>\n        <li>list</li>\n        </ul>\n        <ol>\n        <li><span style=\"line-height: 1.6;\">or we can</span></li>\n        <li><span style=\"line-height: 1.6;\">add a numbered list</span></li>\n        </ol>\n        <p style=\"padding-left: 30px;\"><span style=\"line-height: 1.6;\">We can choose to indent our text</span></p>\n        <p><span style=\"line-height: 1.6;\">Post links: <a href=\"https://devdojo.com\" target=\"_blank\">https://devdojo.com</a></span></p>\n        <p><span style=\"line-height: 1.6;\">and add images:</span></p>\n        <p><span style=\"line-height: 1.6;\"><img src=\"https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif\" alt=\"\" width=\"300\" height=\"300\" /></span></p>', '2016-08-18 07:46:38', '2016-08-18 07:46:38', 0, 0, NULL),
-(8, 8, 1, '<p>Haha :) Cats!</p>\n        <p><img src=\"https://media.giphy.com/media/5Vy3WpDbXXMze/giphy.gif\" alt=\"\" width=\"250\" height=\"141\" /></p>\n        <p><img src=\"https://media.giphy.com/media/XNdoIMwndQfqE/200.gif\" alt=\"\" width=\"200\" height=\"200\" /></p>', '2016-08-18 07:55:42', '2016-08-18 08:45:13', 0, 0, NULL),
-(9, 9, 1, '<p>Hey There!</p>\n        <p>My name is Tony and I\'m the creator of this package that you\'ve just installed. Thanks for checking out it out and if you have any questions or want to contribute be sure to checkout the repo here: <a href=\"https://github.com/thedevdojo/chatter\" target=\"_blank\">https://github.com/thedevdojo/chatter</a></p>\n        <p>Happy programming!</p>', '2016-08-18 07:59:37', '2016-08-18 07:59:37', 0, 0, NULL),
-(10, 9, 1, '<p>Hell yeah Bro Sauce!</p>\n        <p><img src=\"https://media.giphy.com/media/j5QcmXoFWl4Q0/giphy.gif\" alt=\"\" width=\"366\" height=\"229\" /></p>', '2016-08-18 08:01:25', '2016-08-18 08:01:25', 0, 0, NULL),
-(11, 10, 2, '<p>Ngewe Yuk&nbsp;</p>\r\n<p>Ngewe Yuk</p>\r\n<p>Ngewe Yuk</p>\r\n<p>Ngewe Yuk</p>', '2018-10-11 08:53:44', '2018-10-11 08:53:44', 0, 0, NULL);
+(11, 10, 3, '<p>harambe mau ee</p>', '2018-10-11 18:38:29', '2018-10-11 18:38:29', 0, 0, NULL),
+(12, 10, 3, '<p>kjhygukmmomo</p>', '2018-10-11 18:39:40', '2018-10-11 18:41:09', 0, 0, '2018-10-11 18:41:09'),
+(13, 11, 1, '<p>asdqweqweasdasdamsndmansd</p>', '2018-10-22 19:16:35', '2018-10-22 19:16:35', 0, 0, NULL),
+(15, 13, 2, '<p>kawin yuk sapi !!!!</p>', '2018-10-22 19:38:01', '2018-10-22 19:38:01', 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -135,7 +149,30 @@ CREATE TABLE `chatter_user_discussion` (
 --
 
 INSERT INTO `chatter_user_discussion` (`user_id`, `discussion_id`) VALUES
-(2, 10);
+(1, 11),
+(2, 13),
+(3, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kualitas_semen`
+--
+
+CREATE TABLE `kualitas_semen` (
+  `id_semen` int(11) NOT NULL,
+  `kualitas_semen` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kualitas_semen`
+--
+
+INSERT INTO `kualitas_semen` (`id_semen`, `kualitas_semen`) VALUES
+(1, 'Semen Cair Penyimpanan 1 - 5'),
+(2, 'Semen Beku Penyimpanan 1 - 5'),
+(3, 'Semen Cair Penyimpanan 6 - 8'),
+(4, 'Semen Beku Penyimpanan 6 - 8');
 
 -- --------------------------------------------------------
 
@@ -209,12 +246,62 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `address`, `phone`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `id_level`) VALUES
-(1, 'asdasd', 'asdasd', '090989898', 'asdasd@asdasd.com', NULL, '$2y$10$RWWAMSxRd3KuS8gxS1Ecf.7MNhEZmDTuEX.xemHWkxWkZsLmJSer.', NULL, '2018-10-10 07:37:10', '2018-10-10 07:37:10', 2),
-(2, 'admin', 'admin', '00000000000', 'admin@admin.com', NULL, '$2y$10$6/sg3A0ijlJIVy69NPZ8fuZhyhz5geNEvF1BNyvnD8vxpJjfWcwOK', 'ceUdjyZwK3zbu4ohPkL5A2fz96ZrC5IJu7DdnFxz7jNPKKItlvlELo8KMdBD', '2018-10-10 07:39:04', '2018-10-10 07:39:04', 1);
+(1, 'asdasd', 'asdasd', '090989898', 'asdasd@asdasd.com', NULL, '$2y$10$RWWAMSxRd3KuS8gxS1Ecf.7MNhEZmDTuEX.xemHWkxWkZsLmJSer.', 'Or07mgc8yFfbSF0E6OkQ9esANcIZ36q5zTmChi93uRVPD96e4uEaskZkI6B5', '2018-10-10 07:37:10', '2018-10-22 19:24:17', 2),
+(2, 'admin', 'admin', '00000000000', 'admin@admin.com', NULL, '$2y$10$6/sg3A0ijlJIVy69NPZ8fuZhyhz5geNEvF1BNyvnD8vxpJjfWcwOK', 'cnG7b07GjmandLvBfPKXRGqoG9D8fwdk9aAVCZrBeHZjEVpXCPSmYKtiPjpN', '2018-10-10 07:39:04', '2018-10-22 19:39:24', 1),
+(3, 'itakanakharam', 'itakanakharam', '0888888888', 'itak@itak.com', NULL, '$2y$10$q4Z66KyPYOvEcnw/JmopmOp22m9KN1zq4TnfuQ4qpfJ9.fDGIneV6', '4WJNnPZ6I4Ob9jcMsvF5aCSDz6KS7ZzXjU4Pzvzr7Iop2Lf4MmXTBQl5EzXe', '2018-10-11 09:12:43', '2018-10-11 18:41:49', 2),
+(4, 'selebew', 'selebalkjdkquwh', '23456789', 'selebew@selebew.com', NULL, '$2y$10$Sn.m0EPEhVn49mCSs2YBiuFCvNH2VB001rn1j5p9OwyPFskPcuLye', 'TiUFn54WET6pXcDtihKG7o40J06Xhu0atk4sMrQgDt4sI4ctj5Whb4Lw5jD8', '2018-10-22 19:24:45', '2018-10-22 19:24:59', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usia_sapi`
+--
+
+CREATE TABLE `usia_sapi` (
+  `id_usia` int(11) NOT NULL,
+  `usia` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `usia_sapi`
+--
+
+INSERT INTO `usia_sapi` (`id_usia`, `usia`) VALUES
+(1, '15 Bulan - 2 Tahun'),
+(2, '2 Tahun - 4 Tahun'),
+(3, '4 Tahun - 6 Tahun'),
+(4, '6 Tahun - 8 Tahun');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `waktu_birahi`
+--
+
+CREATE TABLE `waktu_birahi` (
+  `id_waktu_birahi` int(11) NOT NULL,
+  `waktu_birahi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `waktu_birahi`
+--
+
+INSERT INTO `waktu_birahi` (`id_waktu_birahi`, `waktu_birahi`) VALUES
+(1, '24.00 - 06.00'),
+(2, '18.00 - 24.00'),
+(3, '06.00 - 12.00'),
+(4, '12.00 - 18.00');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bobot_sapi`
+--
+ALTER TABLE `bobot_sapi`
+  ADD PRIMARY KEY (`id_bobot`);
 
 --
 -- Indexes for table `chatter_categories`
@@ -248,6 +335,12 @@ ALTER TABLE `chatter_user_discussion`
   ADD KEY `chatter_user_discussion_discussion_id_index` (`discussion_id`);
 
 --
+-- Indexes for table `kualitas_semen`
+--
+ALTER TABLE `kualitas_semen`
+  ADD PRIMARY KEY (`id_semen`);
+
+--
 -- Indexes for table `level`
 --
 ALTER TABLE `level`
@@ -268,8 +361,26 @@ ALTER TABLE `users`
   ADD KEY `id_level` (`id_level`);
 
 --
+-- Indexes for table `usia_sapi`
+--
+ALTER TABLE `usia_sapi`
+  ADD PRIMARY KEY (`id_usia`);
+
+--
+-- Indexes for table `waktu_birahi`
+--
+ALTER TABLE `waktu_birahi`
+  ADD PRIMARY KEY (`id_waktu_birahi`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `bobot_sapi`
+--
+ALTER TABLE `bobot_sapi`
+  MODIFY `id_bobot` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `chatter_categories`
@@ -281,13 +392,19 @@ ALTER TABLE `chatter_categories`
 -- AUTO_INCREMENT for table `chatter_discussion`
 --
 ALTER TABLE `chatter_discussion`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `chatter_post`
 --
 ALTER TABLE `chatter_post`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `kualitas_semen`
+--
+ALTER TABLE `kualitas_semen`
+  MODIFY `id_semen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `level`
@@ -305,7 +422,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `usia_sapi`
+--
+ALTER TABLE `usia_sapi`
+  MODIFY `id_usia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `waktu_birahi`
+--
+ALTER TABLE `waktu_birahi`
+  MODIFY `id_waktu_birahi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
