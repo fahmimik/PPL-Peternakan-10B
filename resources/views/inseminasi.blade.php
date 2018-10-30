@@ -13,13 +13,13 @@
     <div class=" container">
       <div class="col-sm-12">
         <form class="" action="" method="post">
-
+          {{csrf_field()}}
 
           <div class="form-group">
             <label class="col-sm-3 control-label" style="text-align:left">Usia</label>
               <select class="col-sm-9 btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="usia"><span class="caret"></span>
                 @foreach ($usia as $u)
-                  <option value="{{$u->usia}}">{{ $u->usia }}</option>
+                  <option value="{{$u->id_usia}}">{{ $u->usia }}</option>
                 @endforeach
               </select>
           </div>
@@ -27,9 +27,9 @@
 
           <div class="form-group">
             <label class="col-sm-3 control-label" style="text-align:left">Bobot</label>
-              <select class="col-sm-9 btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="hari"><span class="caret"></span>
+              <select class="col-sm-9 btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="bobot"><span class="caret"></span>
                 @foreach ($bobot as $b)
-                <option value="{{$b->bobot}}">{{ $b->bobot }}</option>
+                <option value="{{$b->id_bobot}}">{{ $b->bobot }}</option>
                 @endforeach
               </select>
           </div>
@@ -37,9 +37,9 @@
 
           <div class="form-group">
             <label class="col-sm-3 control-label" style="text-align:left">Waktu Birahi</label>
-              <select class="col-sm-9 btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="hari"><span class="caret"></span>
+              <select class="col-sm-9 btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="birahi"><span class="caret"></span>
                 @foreach ($birahi as $birahi)
-                <option value="{{$birahi->waktu_birahi}}">{{ $birahi->waktu_birahi}}</option>
+                <option value="{{$birahi->id_waktu_birahi}}">{{ $birahi->waktu_birahi}}</option>
                 @endforeach
               </select>
           </div>
@@ -47,9 +47,9 @@
 
           <div class="form-group">
             <label class="col-sm-3 control-label" style="text-align:left">Kualitas</label>
-              <select class="col-sm-9 btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="hari"><span class="caret"></span>
+              <select class="col-sm-9 btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" name="semen"><span class="caret"></span>
                 @foreach ($semen as $s)
-                <option value="{{$s->kualitas_semen}}">{{ $s->kualitas_semen }}</option>
+                <option value="{{$s->id_semen}}">{{ $s->kualitas_semen }}</option>
                 @endforeach
               </select>
           </div>

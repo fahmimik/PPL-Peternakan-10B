@@ -23,3 +23,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/inseminasi', 'PeternakController@getInseminasi');
+Route::post('/inseminasi', 'PeternakController@calculateInseminasi');
