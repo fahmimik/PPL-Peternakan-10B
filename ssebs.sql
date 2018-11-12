@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2018 at 06:02 PM
+-- Generation Time: Nov 12, 2018 at 02:55 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.1.21
 
@@ -103,7 +103,8 @@ CREATE TABLE `chatter_discussion` (
 INSERT INTO `chatter_discussion` (`id`, `chatter_category_id`, `title`, `user_id`, `sticky`, `views`, `answered`, `created_at`, `updated_at`, `slug`, `color`, `deleted_at`, `last_reply_at`) VALUES
 (10, 1, 'itak anak haram', 3, 0, 12, 0, '2018-10-11 18:38:29', '2018-10-22 19:24:53', 'itak-anak-haram', '', NULL, '2018-10-11 18:39:40'),
 (11, 1, 'asdasdasd', 1, 0, 2, 0, '2018-10-22 19:16:35', '2018-10-22 19:16:47', 'asdasdasd', '', NULL, '2018-10-23 02:16:35'),
-(13, 1, 'pengalaman kawin', 2, 0, 3, 0, '2018-10-22 19:38:01', '2018-10-25 08:48:28', 'pengalaman-kawin', '', NULL, '2018-10-23 02:38:01');
+(13, 1, 'pengalaman kawin', 2, 0, 3, 0, '2018-10-22 19:38:01', '2018-10-25 08:48:28', 'pengalaman-kawin', '', NULL, '2018-10-23 02:38:01'),
+(14, 3, 'ini nih contohnya yaaaaaaa', 3, 0, 8, 0, '2018-11-04 18:27:03', '2018-11-04 18:52:54', 'ini-nih-contohnya-yaaaaaaa', '#1d78d3', NULL, '2018-11-04 18:37:06');
 
 -- --------------------------------------------------------
 
@@ -131,7 +132,10 @@ INSERT INTO `chatter_post` (`id`, `chatter_discussion_id`, `user_id`, `body`, `c
 (11, 10, 3, '<p>harambe mau ee</p>', '2018-10-11 18:38:29', '2018-10-11 18:38:29', 0, 0, NULL),
 (12, 10, 3, '<p>kjhygukmmomo</p>', '2018-10-11 18:39:40', '2018-10-11 18:41:09', 0, 0, '2018-10-11 18:41:09'),
 (13, 11, 1, '<p>asdqweqweasdasdamsndmansd</p>', '2018-10-22 19:16:35', '2018-10-22 19:16:35', 0, 0, NULL),
-(15, 13, 2, '<p>kawin yuk sapi !!!!</p>', '2018-10-22 19:38:01', '2018-10-22 19:38:01', 0, 0, NULL);
+(15, 13, 2, '<p>kawin yuk sapi !!!!</p>', '2018-10-22 19:38:01', '2018-10-22 19:38:01', 0, 0, NULL),
+(16, 14, 3, '<p><img src=\"file:///C:/Users/X/Desktop/contoh1.jpg\" alt=\"asdasd\" width=\"1028\" height=\"1028\" />contoh kegagalan inseminas</p>', '2018-11-04 18:27:05', '2018-11-04 18:27:05', 0, 0, NULL),
+(17, 14, 3, '<p><img src=\"file:///C:/Users/X/Desktop/contoh1.jpg\" alt=\"asdasd\" />&nbsp; &nbsp;asdasdasd</p>', '2018-11-04 18:32:10', '2018-11-04 18:32:14', 0, 0, '2018-11-04 18:32:14'),
+(18, 14, 3, '<p><img src=\"https://www.google.co.id/imgres?imgurl=https%3A%2F%2Fcdn0-production-images-kly.akamaized.net%2FYz5Y6h5dR6WdvuZNbNt-3_8ldZ4%3D%2F640x360%2Fsmart%2Ffilters%3Aquality(75)%3Astrip_icc()%3Aformat(jpeg)%2Fkly-media-production%2Fmedias%2F1610376%2Foriginal%2F003405000_1496220991-penyakit_hewan_peliharaan.jpg&amp;imgrefurl=https%3A%2F%2Fwww.liputan6.com%2Fproperti%2Fread%2F2972690%2Fkenali-jenis-penyakit-hewan-peliharaan-dan-pencegahannya&amp;docid=QTxmrqW5WKDbiM&amp;tbnid=Lku7kjduQ0bg8M%3A&amp;vet=10ahUKEwiZ0ZvWjrzeAhUKKo8KHcz_Cp0QMwhBKAEwAQ..i&amp;w=640&amp;h=360&amp;safe=strict&amp;bih=695&amp;biw=1366&amp;q=gambar%20hewan&amp;ved=0ahUKEwiZ0ZvWjrzeAhUKKo8KHcz_Cp0QMwhBKAEwAQ&amp;iact=mrc&amp;uact=8\" alt=\"kucing\" width=\"640\" height=\"360\" />&nbsp;hehehe</p>', '2018-11-04 18:37:06', '2018-11-04 18:37:11', 0, 0, '2018-11-04 18:37:11');
 
 -- --------------------------------------------------------
 
@@ -151,7 +155,8 @@ CREATE TABLE `chatter_user_discussion` (
 INSERT INTO `chatter_user_discussion` (`user_id`, `discussion_id`) VALUES
 (1, 11),
 (2, 13),
-(3, 10);
+(3, 10),
+(3, 14);
 
 -- --------------------------------------------------------
 
@@ -392,13 +397,13 @@ ALTER TABLE `chatter_categories`
 -- AUTO_INCREMENT for table `chatter_discussion`
 --
 ALTER TABLE `chatter_discussion`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `chatter_post`
 --
 ALTER TABLE `chatter_post`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `kualitas_semen`
