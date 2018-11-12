@@ -46,6 +46,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a class="" href="{{ url('/forums') }}">FORUMS</a></li>
+                        <li><a href="{{ url('/inseminasi') }}">INSEMINASI</a></li>
                         <!-- <li><a class="" href="index.php?controller=home&action=about">About Us</a></li> -->
                     </ul>
 

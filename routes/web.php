@@ -22,5 +22,5 @@ Route::get('/home', 'HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/inseminasi', 'PeternakController@getInseminasi');
-Route::post('/inseminasi', 'PeternakController@calculateInseminasi');
+Route::get('/inseminasi', 'PeternakController@getInseminasi') -> middleware('auth');
+Route::post('/inseminasi', 'PeternakController@calculateInseminasi') -> middleware('auth');
